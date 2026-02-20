@@ -8,8 +8,8 @@ class TestCreateCourier:
     "Проверка создания курьера с корректным логином и паролем."
     "Ожидается статус 201 и в теле ответа запись {'ok':true}."
     )
-    def test_create_courier_with_valid_data_returns_201(self, courier_payload):
-        response = create_courier(courier_payload)
+    def test_create_courier_with_valid_data_returns_201(self, courier_data):
+        response = create_courier(courier_data)
 
         assert response.status_code == 201
         assert response.json()["ok"] is True
